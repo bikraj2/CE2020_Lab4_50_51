@@ -10,6 +10,7 @@ public:
     virtual void max(int &output) = 0;
     virtual void min(int &output) = 0;
     virtual void exist(int targetKey) = 0;
+    virtual void remove(int key)=0;
     
 };
 #endif
