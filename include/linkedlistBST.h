@@ -17,10 +17,8 @@ class BST_linkedlist : public AbstractBST{
 BST_linkedlist *root;
 
 public:
-BST_linkedlist()
-{
-    root = NULL;
-}
+BST_linkedlist() {}
+
     bool isEmpty() = 0;
     void add(int key, int value) = 0;
     void max(int &output) = 0;
