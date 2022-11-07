@@ -22,10 +22,11 @@ public:
     void add(int key, int value);
     void max(int &output);
     void min(int &output);
-    void exist(int targetKey);
+    bool exist(int targetKey);
     void remove(int key);
 private:
     Node list[128];
+    
 };
 
 #endif
