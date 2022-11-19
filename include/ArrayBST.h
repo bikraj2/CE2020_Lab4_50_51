@@ -1,16 +1,17 @@
 #ifndef ArrayBST_h
 #define ArrayBST_h
 #include "AbstractBST.h"
-
-#define MAX 128;
+#define MAX 20
 class Node
 {
 public:
-    // default constructor
-    Node(int key = 0, int value = 0);
-    // members of the class node
     int key;
     int value;
+    // default constructor
+    Node();
+    Node(int key , int value );
+    // members of the class node
+    
 };
 
 class ArrayBst : public AbstractBST
@@ -23,9 +24,10 @@ public:
     void max(int &output);
     void min(int &output);
     bool exist(int targetKey);
-    void remove(int key);
+    void remove(int key, int start);
+    void show ();
 private:
-    Node list[128];
+    Node list[MAX];
     
 };
 
