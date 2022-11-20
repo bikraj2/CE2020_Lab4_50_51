@@ -1,6 +1,8 @@
 #include <iostream>
 #include "AbstractBST.h"
 #include "ArrayBST.h"
+#include "linkedlistBST.h"
+
 using namespace std;
 
 int main(){
@@ -49,6 +51,61 @@ int main(){
     cout << "The maximum element after removing is : " << max << endl;
     binaryTree->min(min);
     cout << "THe minimum element in the tree is: " << min << endl;
+   
+   delete binaryTree;
+   
+   
+   
+    cout<<"Implementation of BST using linkedlist"<<endl;
 
-    delete binaryTree;
+    AbstractBST *BST = new BST_linkedlist();
+    AbstractBST *x = new BST_linkedlist();
+    //Checking if the tree is empty
+    if (BST->isEmpty()){
+        cout<<"The list is empty"<<endl;
+    }
+    
+    
+    //adding data to the BST using the adddata function
+    BST ->adddata(12,222);
+    BST ->adddata(52,222);
+    BST ->adddata(9,222);
+    BST ->adddata(1,222);
+    BST ->adddata(56,222);
+    BST ->adddata(23,222);
+    BST ->adddata(11,222);
+
+
+     //Checking if the tree is empty
+    if (BST->isEmpty()){
+        cout<<"The list is empty"<<endl;
+    }
+    else{
+        cout<<"The list is not empty"<<endl;
+    }
+    
+
+    //function to display the minimum valued key in the BST
+    *x = BST->min(root);
+    cout<<"The smallest key in the tree is "<<x->key<<endl;
+
+
+    //function to display the maximum valued key in the BST
+    *x= BST->max(root);
+    cout<<"The largest key in the tree is"<<x->key<<endl;
+
+    //function to remove a node from the BST
+    BST->removeBST(1);
+    cout<<"Node removed"<<endl;
+    
+    
+    //function to carry a search in the tree
+    BST->searchBST(12);
+
+
+
+
+
+
+
 }
