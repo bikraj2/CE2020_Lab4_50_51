@@ -102,13 +102,9 @@ void ArrayBst:: min (int &output){
     }
     output = list[(i)/2].key;
 }
-void ArrayBst:: remove (int targetKey,int start)
+void ArrayBst:: remove (int targetKey,int root)
 {
-    int i = start;
-    if(!exist(targetKey)){
-        cout<<"The element doesnot exist"<<endl;
-    }
-    for (; i < MAX; i++)
+    for (int i=root; i < MAX; i++)
     {
         if(list[i].key==targetKey){
             Node rightChild = list[2*i+1];
@@ -127,7 +123,6 @@ void ArrayBst:: remove (int targetKey,int start)
                 i=2*i+1;
                 remove(rightChild.key,i);
             }else{
-                // both child exist then replace it with the maximum value from the left child
                 int j = 2 *i;
                 while (list[j].key!=-1 && j <MAX){
                         j=2*j+1;

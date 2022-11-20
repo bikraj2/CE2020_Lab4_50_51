@@ -23,6 +23,9 @@ int main(){
     binaryTree->add(33,999);
     cout<<"The binary Search Tree is: "<<endl;
     binaryTree->show();
+    binaryTree->remove(48,0);
+    cout<<"After removing "<<endl;
+    binaryTree->show();
     //Checking if the BST is empty
     if(!binaryTree->isEmpty()){
         cout<<"The tree is not empty"<<endl;
