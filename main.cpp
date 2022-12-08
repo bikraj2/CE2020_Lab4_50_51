@@ -6,9 +6,17 @@
 using namespace std;
 
 int main(){
-    cout<< "\n\n\n";
-    cout<<"------------------------Implementation of Binary Search Tree -------------------------"<<endl;
     AbstractBST * binaryTree = new ArrayBst();
+    BST_linkedlist BST;
+    node *x ;
+    cout<< "\n\n\n";
+    int response ;
+    cout<<"Which implementation do you want to see?\n Press 1 for Array \n Press 2 for Linkedlist "<<endl;
+    cin>>response;
+    switch (response){
+        case 1: 
+        cout<<"------------------------Implementation of Binary Search Tree -------------------------"<<endl;
+
     if(binaryTree->isEmpty()){
         cout<<"The binary tree is empty."<<endl;
     }
@@ -56,59 +64,54 @@ int main(){
     cout << "THe minimum element in the tree is: " << min << endl;
    
    delete binaryTree;
-   
-   
-   
-    cout<<"Implementation of BST using linkedlist"<<endl;
+   break;
+   case 2:
+    cout<<"\n \n -----------------------Implementation of BST using linkedlist----------------------------\n"<<endl;
 
-    AbstractBST *BST = new BST_linkedlist();
-    AbstractBST *x = new BST_linkedlist();
+    
     //Checking if the tree is empty
-    if (BST->isEmpty()){
+    if (BST.isEmpty()){
         cout<<"The list is empty"<<endl;
     }
     
     
     //adding data to the BST using the adddata function
-    BST ->adddata(12,222);
-    BST ->adddata(52,222);
-    BST ->adddata(9,222);
-    BST ->adddata(1,222);
-    BST ->adddata(56,222);
-    BST ->adddata(23,222);
-    BST ->adddata(11,222);
+    BST .adddata(12,222);
+
+    BST.adddata(52, 222);
+    BST.adddata(9, 222);
+    BST.adddata (1,222);
 
 
-     //Checking if the tree is empty
-    if (BST->isEmpty()){
+    cout <<"\nChecking if the tree is empty"<<endl;
+    if (BST.isEmpty()){
         cout<<"The list is empty"<<endl;
     }
     else{
         cout<<"The list is not empty"<<endl;
     }
+        
     
-
     //function to display the minimum valued key in the BST
-    *x = BST->min(root);
-    cout<<"The smallest key in the tree is "<<x->key<<endl;
+    int smallest = BST.min(BST.root);
+    cout<<"The smallest key in the tree is "<<smallest<<endl;
 
 
     //function to display the maximum valued key in the BST
-    *x= BST->max(root);
-    cout<<"The largest key in the tree is"<<x->key<<endl;
+    int largest =BST.max(BST.root);
+    cout<<"The largest key in the tree is "<<largest<<endl;
 
+    BST.showData(BST.root);
     //function to remove a node from the BST
-    BST->removeBST(1);
-    cout<<"Node removed"<<endl;
+    BST.removeBST(1);
+    cout<<"\n Node removed"<<endl;
     
-    
+    BST.showData(BST.root);
     //function to carry a search in the tree
-    BST->searchBST(12);
-
-
-
-
-
-
+    BST.searchBST(12);
+    BST.searchBST(91);
+    // BST.inorder(BST.root); In order not working
+    break;
+    }
 
 }

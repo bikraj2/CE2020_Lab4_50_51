@@ -1,5 +1,6 @@
 #include "ArrayBST.h"
 #include "AbstractBST.h"
+#include "linkedlistBST.h"
 
 #include <iostream>
 
@@ -143,3 +144,11 @@ void ArrayBst:: show(){
         std::cout<<"The Element is :"<<list[i].key<<std::endl;
     }
 }
+    bool ArrayBst::searchBST(int targetKey){return 0;}
+    void ArrayBst::addBST(node *targetnode, node *newnode){}
+    void ArrayBst::adddata(int key, int value){}
+    void ArrayBst:: removeBST(int keyToDelete){}
+    int ArrayBst:: min(node *tempo){return 0;}
+    int ArrayBst::max(node *tempo){return 0;}
+    void ArrayBst::showData(node *n){}
+    void ArrayBst::inorder(node *n1){}

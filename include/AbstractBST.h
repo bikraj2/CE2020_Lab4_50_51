@@ -1,9 +1,14 @@
 #ifndef AbstractBST_h
 #define AbstractBST_h
+#include <iostream>
+using namespace std;
 
-class AbstractBST
+class node;
+
+class AbstractBST 
 {
 public:
+
     // function delcration for some basic information in a BST
     virtual bool isEmpty() = 0;
     virtual void addBST(node *targetnode, node* newnode)=0;
@@ -16,8 +21,10 @@ public:
     virtual void show()=0;
     virtual bool searchBST(int targetkey)=0;
     virtual void removeBST(int keyToDelete)=0;
-    virtual node min(node *tempo)=0;
-    virtual node max(node *tempo)=0;
+    virtual int min(node *tempo)=0;
+    virtual int max(node *tempo)=0;
+    virtual void showData (node *n)=0;
+    virtual void inorder(node *n1) = 0;
 };
 
 #endif
