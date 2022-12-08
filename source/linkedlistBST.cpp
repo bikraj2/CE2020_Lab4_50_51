@@ -101,7 +101,6 @@ void BST_linkedlist ::removeBST(int keyToDelete)// function to remove the key fr
         delete[] temp;
         root = temp2;
         return;
-    
     }
     node *parent = root;
     while(true){
